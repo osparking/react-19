@@ -1,22 +1,17 @@
-interface ButtonProp {
-  label: string;
-  disabled: boolean;
-}
-
-function cancelOrder() {
-  alert("주문 취소");
-}
-function MyButton({ label, disabled }: ButtonProp) {
-  return (
-    <button disabled={disabled} onClick={cancelOrder}>{label}</button>
-  )
-}
+import { useState } from "react";
+import "./App.css";
 
 export default function BumSoap() {
+  const [onlyStocked, setOnlyStocked] = useState<boolean>(false);
   return (
     <div>
       <h1>범이비누 주문</h1>
-      <MyButton label="구매 취소" disabled={false} />
+      <label htmlFor="stockedChk">재고 있는 상품만 열거</label>
+      <input 
+        id="stockedChk" 
+        type="checkbox"
+        checked={onlyStocked}
+        onChange={() => setOnlyStocked(!onlyStocked)} />
     </div>
   )
 }

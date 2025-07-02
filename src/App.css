@@ -41,11 +41,11 @@
   color: #888;
 }
 
-label {
-  display: block;
-}
-
 table {
   margin-top: 15px;
   border: 1px solid black;
+}
+
+label, input {
+  display: inline;
 }
