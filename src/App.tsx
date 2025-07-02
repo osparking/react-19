@@ -1,6 +1,6 @@
-function MyButton({label} : {label: string}) {
+function MyButton({ label, disabled }: { label: string, disabled: boolean }) {
   return (
-    <button>{label}</button>
+    <button disabled={disabled}>{label}</button>
   )
 }
 
@@ -8,7 +8,7 @@ export default function BumSoap() {
   return (
     <div>
       <h1>범이비누 가게</h1>
-      <MyButton label={"123"} />
+      <MyButton label="구매 취소" disabled={true} />
     </div>
   )
 }
